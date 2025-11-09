@@ -38,8 +38,9 @@ public class Main implements TimeController {
         weatherSubject.register(mediumPriorityWeather, Channel.WEATHER);
         weatherSubject.register(lowPriorityWeather, Channel.WEATHER);
 
-        //AutoSubscribe
+        //AutoSubscribe 
         AutoSubscribe auto = new AutoSubscribe(weatherSubject, Channel.WEATHER, 5);
+
 
         // Layout setup
         JPanel weatherPanels = new JPanel(new GridLayout(3, 1));

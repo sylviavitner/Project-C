@@ -48,6 +48,6 @@ public class AutoSubscribe implements UiObserver
     public int getPriority()
     {
        return priority;
-        
+
     }
 }
