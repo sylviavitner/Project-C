@@ -1,6 +1,7 @@
 package src;
 
-public enum Channel {
+public enum Channel 
+{
     WEATHER,
     TRANSIT,
     AIR_QUALITY,

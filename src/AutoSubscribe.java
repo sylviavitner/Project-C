@@ -5,7 +5,7 @@ public class AutoSubscribe implements UiObserver
     private Channel channel;
     private int priority;
 
-    public AutoSubscribe(UiSubject subject)
+    public AutoSubscribe(UiSubject subject, Channel channel, int priority)
     {
         this.subject = subject;
         this.channel = channel;
