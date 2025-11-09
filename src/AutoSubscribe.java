@@ -8,6 +8,8 @@ public class AutoSubscribe implements UiObserver
     public AutoSubscribe(UiSubject subject)
     {
         this.subject = subject;
+        this.channel = channel;
+        this.priority = priority;
         subject.register(this, channel);
     }
 
@@ -16,16 +18,20 @@ public class AutoSubscribe implements UiObserver
         subject.unregister(this,channel);
     }
 
-public void update(Object update) {
-        // Handle updates depending on subject type
-        if (update instanceof WeatherSubject) {
-            WeatherSubject weather = (WeatherSubject) update;
-            System.out.printf("AutoSubscribe received update: %.1f°C, %.1f%% humidity%n",
-                              weather.getTemperature(), weather.getHumidity());
+
+        public void update(Object update) {
+        if (update instanceof WeatherSubject weather) {
+            System.out.printf(
+                "AutoSubscribe received update: %.1f°C, %.1f%% humidity%n",
+                weather.getTemperature(),
+                weather.getHumidity()
+            );
         } else {
             System.out.println("AutoSubscribe received update: " + update);
         }
     }
+
+
 
 
 
